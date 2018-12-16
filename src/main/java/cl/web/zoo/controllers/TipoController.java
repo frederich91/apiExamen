@@ -38,7 +38,7 @@ public class TipoController {
     String mensaje = "Error al agregar";
     Tipo tipo = new Tipo();
     tipo.setNombre(nombre);
-    tipo.setDesc(descripcion);
+    tipo.setDescripcion(descripcion);
     
     if (tipoDao.getCrud().save(tipo) != null) {
       mensaje = "Agregado correctamente";
@@ -64,7 +64,7 @@ public class TipoController {
     String mensaje = "Error al modificar";
     Tipo tipo = tipoDao.getCrud().findById(id).get();
     tipo.setNombre(nombre);
-    tipo.setDesc(desc);
+    tipo.setDescripcion(desc);
     
     if (tipoDao.getCrud().save(tipo) != null) {
       mensaje = "Modificado correctamente";

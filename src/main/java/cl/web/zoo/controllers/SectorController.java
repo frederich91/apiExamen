@@ -39,7 +39,7 @@ public class SectorController {
     String mensaje = "Error al agregar";
     Sector sector = new Sector();
     sector.setNombre(nombre);
-    sector.setDesc(desc);
+    sector.setDescripcion(desc);
     
     if (sectorDao.getCrud().save(sector) != null) {
       mensaje = "Agregado correctamente";
@@ -58,7 +58,7 @@ public class SectorController {
     String mensaje = "Error al modificar";
     Sector sector = new Sector();
     sector.setNombre(nombre);
-    sector.setDesc(desc);
+    sector.setDescripcion(desc);
     
     if (sectorDao.getCrud().save(sector) != null) {
       mensaje = "Modificado correctamente";

@@ -23,22 +23,17 @@ public class Sector implements java.io.Serializable {
 
   private Integer id;
   private String nombre;
-  private String desc;
-  private Set<Animal> animals = new HashSet<Animal>(0);
+  private String descripcion;
+
 
   public Sector() {}
 
 
-  public Sector(String nombre, String desc) {
+  public Sector(String nombre, String descripcion) {
     this.nombre = nombre;
-    this.desc = desc;
+    this.descripcion = descripcion;
   }
 
-  public Sector(String nombre, String desc, Set<Animal> animals) {
-    this.nombre = nombre;
-    this.desc = desc;
-    this.animals = animals;
-  }
 
   @Id
   @GeneratedValue(strategy = IDENTITY)
@@ -62,24 +57,14 @@ public class Sector implements java.io.Serializable {
   }
 
 
-  @Column(name = "desc", nullable = false, length = 50)
-  public String getDesc() {
-    return this.desc;
+  @Column(name = "descripcion", nullable = false, length = 50)
+  public String getDescripcion() {
+    return this.descripcion;
   }
 
-  public void setDesc(String desc) {
-    this.desc = desc;
+  public void setDescripcion(String descripcion) {
+    this.descripcion = descripcion;
   }
-
-  @OneToMany(fetch = FetchType.LAZY, mappedBy = "sector")
-  public Set<Animal> getAnimals() {
-    return this.animals;
-  }
-
-  public void setAnimals(Set<Animal> animals) {
-    this.animals = animals;
-  }
-
 
 
 }
