@@ -63,7 +63,7 @@ public class ApiSectorController {
     try {
       sectorBuscado = sectorDao.getCrud().findById(id).get();
       sectorBuscado.setNombre(sector.getNombre());
-      sectorBuscado.setDescripcion(sector.getdescripcion());
+      sectorBuscado.setDescripcion(sector.getDescripcion());
     } catch (Exception e) {
       return new ResponseEntity(HttpStatus.NOT_FOUND);
     }
